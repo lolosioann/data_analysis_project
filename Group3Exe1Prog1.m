@@ -34,9 +34,11 @@ best_pval_without_TMS = 0;
         end
     end
 % print the results
-fprintf("Best distribution with TMS: %s\n", best_dist_with_TMS.DistributionName);
+fprintf("Best distribution with TMS:\n");
+disp(best_dist_with_TMS);
 fprintf('With p-val: %f\n', best_pval_with_TMS);
-fprintf("\nBest distribution without TMS: %s\n", best_dist_without_TMS.DistributionName);
+fprintf("\nBest distribution without TMS: \n");
+disp(best_dist_without_TMS);
 fprintf('With p-val: %f\n', best_pval_without_TMS);
 % plot the histograms and the fitted distributions
 figure();
@@ -50,3 +52,9 @@ bins = floor(sqrt(length(EDduration_without_TMS)));
 histfit(EDduration_without_TMS, bins, 'Exponential');
 legend('Data', 'Fitted distribution');
 title('ED duration without TMS');
+
+%% Comments - Results
+% The distribution of best fit seems to be the Exponential distribution for
+% both cases, with and without TMS. The p-value for the case without TMS however
+% is much lower than the one with TMS, indicating that the fit is better in the
+% case with TMS. Even though both distributions are Exponential, they seem not to be identical. However the confidence intervals for mu overlap, hence we cannot reject the hypothesis that the data come from the same distribution.   
