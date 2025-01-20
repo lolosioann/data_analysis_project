@@ -47,3 +47,11 @@ end
 results = table(setup_vals', ttest_results', randomization_results', 'VariableNames', {'Setup', 'TTest', 'Randomization'});
 disp("1 means that the null hypothesis is not rejected, 0 means that the null hypothesis is rejected");
 disp(results)
+%% COMMENTS - RESULTS
+% There seems to be no meaningfull correlation between the preTMS and postTMS
+% values for any of the setups. The null hypothesis is rejected for nearly all
+% setups, both with the t-test and the randomization test. The only exception is the randomization
+% test for setup 1, where the null hypothesis is not rejected. This is probably due to the fact that
+% setup 1 has the biggest correlation coefficient, so the randomization test is less likely to reject
+% the null hypothesis. All in all, the results of the randomization test appear to be more trustworthy,
+% given the limited number of samples and the fact that the t-test assumes a normal distribution.
